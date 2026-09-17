@@ -10,17 +10,12 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.9"
-
       - key: AUTO_SEED
         value: "true"
-
-      - key: DATABASE_URL
-        fromDatabase:
-          name: pharmavoice-db
-          property: connectionString
-
       - key: GROQ_API_KEY
         sync: false
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_t38WwdyAcBTb@ep-blue-mouse-b3z4jjmz-pooler.c-4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
 
   - type: web
     name: pharmavoice
@@ -35,7 +30,3 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
-
-databases:
-  - name: pharmavoice-db
-    plan: free
