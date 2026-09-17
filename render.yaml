@@ -30,3 +30,5 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
+
+# ❌ NO databases: section (using Neon only)
