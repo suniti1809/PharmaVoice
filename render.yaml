@@ -1,24 +1,29 @@
 services:
-  # ---------------- backend (FastAPI + LangGraph agent) ----------------
+  # ---------------- backend ----------------
   - type: web
     name: pharmavoice-api
     runtime: python
     plan: free
-    rootDir: backend        # ← Change: api → backend
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn index:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.9"
+
       - key: AUTO_SEED
         value: "true"
+
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: pharmavoice-db
+          property: connectionString
+
       - key: GROQ_API_KEY
         sync: false
 
-  # ---------------- frontend (React + Redux, built by Vite) ----------------
+  # ---------------- frontend ----------------
   - type: web
     name: pharmavoice
     runtime: static
@@ -31,3 +36,8 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
+
+# ---------------- PostgreSQL ----------------
+databases:
+  - name: pharmavoice-db
+    plan: free
