@@ -881,10 +881,10 @@ uvicorn index:app --reload --port 8000
 **Suniti**
 
 GitHub Profile:
-[@suniti1809](https://github.com/suniti1809?utm_source=chatgpt.com)
+[@suniti1809](https://github.com/suniti1809)
 
 Project Repository:
-[PharmaVoice on GitHub](https://github.com/suniti1809/pharmavoice?utm_source=chatgpt.com)
+[PharmaVoice on GitHub](https://github.com/suniti1809/pharmavoice)
 
 ---
 
