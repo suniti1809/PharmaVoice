@@ -1,5 +1,4 @@
 services:
-  # ---------------- backend ----------------
   - type: web
     name: pharmavoice-api
     runtime: python
@@ -23,10 +22,10 @@ services:
       - key: GROQ_API_KEY
         sync: false
 
-  # ---------------- frontend ----------------
   - type: web
     name: pharmavoice
     runtime: static
+    rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     routes:
@@ -37,7 +36,6 @@ services:
         source: /*
         destination: /index.html
 
-# ---------------- PostgreSQL ----------------
 databases:
   - name: pharmavoice-db
     plan: free
