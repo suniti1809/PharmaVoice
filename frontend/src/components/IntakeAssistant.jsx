@@ -28,7 +28,7 @@ export default function IntakeAssistant() {
   const [question, setQuestion] = useState('');
   const [dragging, setDragging] = useState(false);
   const fileInput = useRef(null);
-  const chatEnd = useRef(null);
+  const chatThreadRef = useRef(null);
 
   // Advance the progress indicator while the request is in flight.
   useEffect(() => {
@@ -44,8 +44,13 @@ export default function IntakeAssistant() {
   }, [status, dispatch]);
 
   useEffect(() => {
-    chatEnd.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [chat.length]);
+    if (chatThreadRef.current) {
+      chatThreadRef.current.scrollTo({
+        top: chatThreadRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [chat.length, chatStatus]);
 
   const submitFile = (file) => {
     if (file) dispatch(runIntakeFromFile(file));
@@ -128,7 +133,7 @@ export default function IntakeAssistant() {
         <button
           type="button"
           className="btn btn-primary btn-sm"
-          disabled={pastedText.trim().length < 10 || status === 'running'}
+          disabled={pastedText.trim().length === 0 || status === 'running'}
           onClick={() => dispatch(runIntakeFromText(pastedText))}
         >
           Extract with AI
@@ -161,7 +166,7 @@ export default function IntakeAssistant() {
 
       <section className="chat-block intake-col">
         <p className="eyebrow">AI ASSISTANT</p>
-        <div className="chat-thread">
+        <div className="chat-thread" ref={chatThreadRef}>
           {chat.map((message, index) => (
             <div key={index} className={`bubble bubble-${message.role}`}>
               {message.text.split('\n').map((line, lineIndex) => (
@@ -170,7 +175,6 @@ export default function IntakeAssistant() {
             </div>
           ))}
           {chatStatus === 'running' && <div className="bubble bubble-assistant">Thinking…</div>}
-          <div ref={chatEnd} />
         </div>
 
         <form className="chat-input" onSubmit={onAsk}>
