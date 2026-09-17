@@ -2,128 +2,141 @@
 
 > **AI-powered customer complaint intake, risk assessment, duplicate detection, and CAPA support for pharmaceutical quality management.**
 
-PharmaVoice is an AI-assisted **Customer Complaint Management System (QMS)** designed for pharmaceutical organizations. It converts unstructured customer complaints from emails, documents, or pasted text into structured complaint records and supports quality teams with **field extraction, completeness checking, risk assessment, duplicate detection, root-cause suggestions, CAPA recommendations, and grounded Q&A**.
+PharmaVoice is an AI-assisted **Customer Complaint Management System (QMS)** designed for pharmaceutical organizations.
 
-The system combines a modern React frontend with a FastAPI backend, LangGraph-based AI workflows, and database support for complaint management.
+It converts unstructured customer complaints received through emails, documents, or pasted text into structured complaint records and supports quality teams with:
 
----
+- AI-powered field extraction
+- Complaint completeness checking
+- Risk assessment
+- Duplicate complaint detection
+- Root-cause suggestions
+- CAPA recommendations
+- Grounded complaint Q&A
+- Human-in-the-loop review
+- Complaint record management
 
-## 🚀 Live Demo
-
-### 🌐 Live Application
-
-**Frontend:**
-`https://pharmavoice-sp14.onrender.com`
-
-### ⚙️ Backend API
-
-**Backend:**
-`https://pharmavoice-api.onrender.com`
-
-### 📚 API Documentation
-
-`https://pharmavoice-api.onrender.com/docs`
+The system combines a modern **React + Vite frontend**, **FastAPI backend**, **LangGraph AI workflow**, **Groq LLM integration**, and **PostgreSQL database**.
 
 ---
 
-## ✨ Key Features
+# 🚀 Live Demo
 
-### 📩 Complaint Intake
+## 🌐 Live Application
+
+**Frontend:**  
+https://pharmavoice-sp14.onrender.com
+
+## ⚙️ Backend API
+
+**Backend:**  
+https://pharmavoice-api.onrender.com
+
+## 📚 API Documentation
+
+**Swagger / OpenAPI:**  
+https://pharmavoice-api.onrender.com/docs
+
+---
+
+# ✨ Key Features
+
+## 📩 Complaint Intake
 
 PharmaVoice supports multiple complaint input formats:
 
-* Paste complaint text directly
-* Upload PDF documents
-* Upload DOCX documents
-* Upload EML email files
-* Upload TXT files
-* Process structured complaint information
+- Paste complaint text directly
+- Upload PDF documents
+- Upload DOCX documents
+- Upload EML email files
+- Upload TXT files
+- Process structured complaint information
 
 The system converts unstructured complaint content into a structured complaint record.
 
 ---
 
-### 🤖 AI-Powered Field Extraction
+## 🤖 AI-Powered Field Extraction
 
 The AI workflow extracts important complaint information such as:
 
-* Complaint description
-* Product information
-* Batch number
-* Customer information
-* Event date
-* Location
-* Product issue
-* Reported symptoms
-* Supporting information
+- Complaint description
+- Product information
+- Batch number
+- Customer information
+- Event date
+- Location
+- Product issue
+- Reported symptoms
+- Supporting information
 
-Each extracted field can include a **confidence level** to help the reviewer understand the reliability of the extraction.
+Extracted information can include confidence levels to help reviewers understand the reliability of the extraction.
 
 ---
 
-### 📝 Complaint Completeness Check
+## 📝 Complaint Completeness Check
 
 Before saving a complaint, PharmaVoice checks whether important information is missing.
 
 The system can:
 
-* Identify incomplete fields
-* Highlight missing information
-* Generate follow-up questions
-* Help the reviewer collect additional details
+- Identify incomplete fields
+- Highlight missing information
+- Generate follow-up questions
+- Help reviewers collect additional details
 
 This helps reduce incomplete complaint records.
 
 ---
 
-### ⚠️ Risk Assessment
+## ⚠️ Risk Assessment
 
 PharmaVoice evaluates complaints using a structured risk assessment workflow.
 
 It provides:
 
-* Severity
-* Priority
-* Risk score
-* Possible root causes
-* Recommended actions
-* CAPA suggestions
+- Severity
+- Priority
+- Risk score
+- Possible root causes
+- Recommended actions
+- CAPA suggestions
 
 The risk score is represented on a **0–100 scale**.
 
 ---
 
-### 🔍 Duplicate Complaint Detection
+## 🔍 Duplicate Complaint Detection
 
 The system checks whether a new complaint may already exist in the complaint register.
 
 Duplicate detection can compare information such as:
 
-* Product
-* Batch
-* Complaint description
-* Customer information
-* Complaint characteristics
+- Product
+- Batch
+- Complaint description
+- Customer information
+- Complaint characteristics
 
 Potential duplicates are flagged for human review.
 
 ---
 
-### 🧠 AI Root-Cause & CAPA Suggestions
+## 🧠 AI Root-Cause & CAPA Suggestions
 
-Based on the complaint information, PharmaVoice can provide:
+Based on complaint information, PharmaVoice can provide:
 
-* Possible root causes
-* Investigation directions
-* Corrective actions
-* Preventive actions
-* CAPA recommendations
+- Possible root causes
+- Investigation directions
+- Corrective actions
+- Preventive actions
+- CAPA recommendations
 
-These recommendations are intended as **decision support** and require human review before being used operationally.
+These recommendations are intended as **decision support** and require human review before operational use.
 
 ---
 
-### 💬 Grounded Complaint Q&A
+## 💬 Grounded Complaint Q&A
 
 Users can ask questions about complaint information.
 
@@ -131,11 +144,11 @@ Example:
 
 > **Which batch is affected?**
 
-The system provides answers based on the available complaint information instead of relying only on general AI knowledge.
+The system provides answers based on the available complaint information.
 
 ---
 
-### 📋 Complaint Register
+## 📋 Complaint Register
 
 Saved complaints receive complaint IDs following the format:
 
@@ -153,25 +166,23 @@ The complaint register helps users review and manage submitted complaints.
 
 ---
 
-### 👤 Human Review
+## 👤 Human Review
 
-PharmaVoice keeps a **human-in-the-loop workflow**.
+PharmaVoice follows a **human-in-the-loop workflow**.
 
 AI-generated information can be reviewed and corrected before a complaint is finally saved.
 
-This allows quality personnel to verify:
+Quality personnel can verify:
 
-* Extracted fields
-* Risk assessment
-* Duplicate flags
-* Root causes
-* CAPA suggestions
+- Extracted fields
+- Risk assessment
+- Duplicate flags
+- Root causes
+- CAPA suggestions
 
 ---
 
-## 🧠 AI Workflow
-
-The core workflow follows a structured pipeline:
+# 🧠 AI Workflow
 
 ```text
 Customer Complaint
@@ -223,7 +234,7 @@ Customer Complaint
 
 ---
 
-## 🏗️ System Architecture
+# 🏗️ System Architecture
 
 ```text
                     ┌──────────────────────┐
@@ -232,83 +243,84 @@ Customer Complaint
                                │
                                ▼
                     ┌──────────────────────┐
-                    │ React + Vite Frontend│
-                    │      Render          │
+                    │ React + Vite         │
+                    │ Frontend / Render    │
                     └──────────┬───────────┘
-                               │ REST API
+                               │
+                            REST API
+                               │
                                ▼
                     ┌──────────────────────┐
                     │ FastAPI Backend      │
-                    │      Render          │
+                    │ Render               │
                     └──────────┬───────────┘
                                │
                 ┌──────────────┼──────────────┐
                 ▼              ▼              ▼
        ┌────────────────┐ ┌───────────┐ ┌──────────────┐
        │ LangGraph      │ │ SQLAlchemy│ │ Complaint    │
-       │ AI Workflow    │ │ Database  │ │ Services     │
+       │ AI Workflow    │ │ ORM       │ │ Services     │
        └───────┬────────┘ └─────┬─────┘ └──────────────┘
                │                │
                ▼                ▼
         ┌──────────────┐  ┌──────────────┐
-        │ Groq LLM     │  │ SQLite /     │
-        │ Optional     │  │ PostgreSQL   │
+        │ Groq LLM     │  │ PostgreSQL   │
+        │ Optional     │  │ / SQLite     │
         └──────────────┘  └──────────────┘
 ```
 
 ---
 
-## 🛠️ Technology Stack
+# 🛠️ Technology Stack
 
-| Layer            | Technology           |
-| ---------------- | -------------------- |
-| Frontend         | React 18             |
-| Build Tool       | Vite                 |
-| State Management | Redux Toolkit        |
-| UI               | Inter Font + Dark UI |
-| Backend          | FastAPI              |
-| ORM              | SQLAlchemy           |
-| AI Workflow      | LangGraph            |
-| LLM              | Groq                 |
-| Database         | SQLite / PostgreSQL  |
-| API              | REST                 |
-| Deployment       | Render               |
-| Language         | Python + JavaScript  |
+| Layer | Technology |
+|---|---|
+| Frontend | React 18 |
+| Build Tool | Vite |
+| State Management | Redux Toolkit |
+| UI | Inter Font + Dark UI |
+| Backend | FastAPI |
+| ORM | SQLAlchemy |
+| AI Workflow | LangGraph |
+| LLM | Groq |
+| Database | PostgreSQL / SQLite |
+| API | REST |
+| Deployment | Render |
+| Languages | Python + JavaScript |
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
 PharmaVoice/
 │
-├── api/
+├── backend/
 │   ├── app/
 │   │   ├── agents/
 │   │   ├── routers/
 │   │   ├── services/
 │   │   └── ...
 │   │
-│   ├── sample_data/
-│   ├── scripts/
-│   ├── tests/
 │   ├── index.py
-│   |── requirements.txt
+│   └── requirements.txt
 │
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── store/
-│   ├── assets/
-│   └── ...
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── store/
+│   │   └── assets/
+│   │
+│   ├── index.html
+│   ├── package.json
+│   └── package-lock.json
 │
-├── index.html
-├── package.json
-├── vite.config.js
 ├── render.yaml
 ├── .env.example
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
@@ -319,15 +331,75 @@ PharmaVoice/
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/suniti1809/pharmavoice.git
-cd pharmavoice
+git clone https://github.com/suniti1809/PharmaVoice.git
+cd PharmaVoice
 ```
 
 ---
 
-## 2. Install Frontend Dependencies
+# 2. Backend Setup
 
-From the project root:
+Open a terminal and navigate to the backend:
+
+```bash
+cd backend
+```
+
+Create a Python virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+### Windows
+
+Activate the environment:
+
+```bash
+.venv\Scripts\activate
+```
+
+Install backend dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the FastAPI backend:
+
+```bash
+uvicorn index:app --reload --port 8000
+```
+
+Backend will run at:
+
+```text
+http://localhost:8000
+```
+
+Swagger API documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+Health check:
+
+```text
+http://localhost:8000/api/health
+```
+
+---
+
+# 3. Frontend Setup
+
+Open another terminal from the project root:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
 
 ```bash
 npm install
@@ -347,64 +419,6 @@ http://localhost:5173
 
 ---
 
-## 3. Setup Backend
-
-Open another terminal:
-
-```bash
-cd api
-```
-
-Create a virtual environment:
-
-### Windows
-
-```bash
-python -m venv .venv
-```
-
-Activate it:
-
-```bash
-.venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements-dev.txt
-```
-
----
-
-## 4. Start FastAPI Backend
-
-From the `api` directory:
-
-```bash
-uvicorn index:app --reload --port 8000
-```
-
-Backend:
-
-```text
-http://localhost:8000
-```
-
-API documentation:
-
-```text
-http://localhost:8000/docs
-```
-
-Health check:
-
-```text
-http://localhost:8000/api/health
-```
-
----
-
 # 🔐 Environment Variables
 
 Create a `.env` file according to `.env.example`.
@@ -417,19 +431,21 @@ DATABASE_URL=
 AUTO_SEED=true
 ```
 
-### GROQ_API_KEY
+## GROQ_API_KEY
 
-Optional API key for Groq-powered AI processing.
+The Groq API key enables Groq-powered AI processing.
 
-If the API key is not provided, the application can use its **rule-based fallback mode**.
+If the API key is unavailable, PharmaVoice can use its **rule-based fallback mode**.
 
-### DATABASE_URL
+## DATABASE_URL
 
-Optional database connection string.
+Database connection string.
 
-If it is not provided, the application can use SQLite according to the project configuration.
+For local development, the application can use SQLite according to the project configuration.
 
-### AUTO_SEED
+For deployed environments, PostgreSQL is used for persistent database storage.
+
+## AUTO_SEED
 
 Controls whether sample complaint data is automatically seeded.
 
@@ -439,13 +455,15 @@ Example:
 AUTO_SEED=true
 ```
 
+> Never commit `.env` files or API keys to GitHub.
+
 ---
 
 # 🤖 AI Processing Modes
 
 PharmaVoice supports two processing modes.
 
-### With Groq API Key
+## With Groq API Key
 
 ```text
 Complaint
@@ -459,7 +477,7 @@ Extraction / Risk / CAPA
 Human Review
 ```
 
-### Without Groq API Key
+## Without Groq API Key
 
 ```text
 Complaint
@@ -471,13 +489,13 @@ Structured Result
 Human Review
 ```
 
-This allows the application to remain usable even when an external LLM API key is not configured.
+The rule-based fallback allows the application to remain usable when an external LLM API key is not configured.
 
 ---
 
 # ☁️ Render Deployment
 
-PharmaVoice is designed to be deployed on **Render** using separate frontend and backend services.
+PharmaVoice is deployed on **Render** using separate frontend, backend, and PostgreSQL services.
 
 ## Deployment Architecture
 
@@ -489,56 +507,29 @@ PharmaVoice is designed to be deployed on **Render** using separate frontend and
                     │    Render    │
                     └──────┬───────┘
                            │
-             ┌─────────────┴─────────────┐
-             ▼                           ▼
-   ┌──────────────────┐       ┌──────────────────┐
-   │ Frontend         │       │ Backend          │
-   │ Render Static    │──────▶│ Render Web       │
-   │ Site             │ REST  │ Service          │
-   └──────────────────┘ API   └────────┬─────────┘
-                                       │
-                                       ▼
-                              Database / AI
+             ┌─────────────┼─────────────┐
+             ▼             ▼             ▼
+   ┌────────────────┐ ┌──────────────┐ ┌──────────────┐
+   │ React Frontend │ │ FastAPI      │ │ PostgreSQL   │
+   │ Static Site    │ │ Backend      │ │ Database     │
+   └────────────────┘ └──────────────┘ └──────────────┘
+             │                │
+             └──── REST API ──┘
 ```
 
----
-
-## Option 1 — Deploy Using `render.yaml`
-
-The repository contains:
+Deployment configuration is defined in:
 
 ```text
 render.yaml
 ```
 
-Push the project to GitHub:
-
-```bash
-git add .
-git commit -m "Prepare PharmaVoice for Render"
-git push origin main
-```
-
-Then:
-
-1. Open Render.
-2. Connect your GitHub account.
-3. Select the `suniti1809/pharmavoice` repository.
-4. Choose **Blueprint**.
-5. Render reads `render.yaml`.
-6. Create the required services.
-7. Add environment variables.
-8. Deploy.
-
 ---
 
-## Backend Render Configuration
-
-The FastAPI backend should use:
+# Backend Render Configuration
 
 ```text
 Root Directory:
-api
+backend
 ```
 
 Build command:
@@ -553,21 +544,25 @@ Start command:
 uvicorn index:app --host 0.0.0.0 --port $PORT
 ```
 
+Health check:
+
+```text
+/api/health
+```
+
 ---
 
-## Frontend Render Configuration
-
-The React/Vite frontend should use:
+# Frontend Render Configuration
 
 ```text
 Root Directory:
-.
+frontend
 ```
 
 Build command:
 
 ```bash
-npm install && npm run build
+npm ci && npm run build
 ```
 
 Publish directory:
@@ -578,70 +573,68 @@ dist
 
 ---
 
-## Frontend API Configuration
+# Database Configuration
 
-After deploying the backend, copy its Render URL.
-
-Example:
-
-```text
-https://pharmavoice-backend.onrender.com
-```
-
-Set the frontend environment variable:
+The deployed application uses PostgreSQL through:
 
 ```env
-VITE_API_URL=https://pharmavoice-backend.onrender.com
+DATABASE_URL
 ```
 
-Then redeploy the frontend.
+The database connection is configured through the Render Blueprint.
+
+The application also supports SQLite for local development and testing.
 
 ---
 
 # 🗄️ Database
 
-PharmaVoice supports:
+PharmaVoice supports two database options.
 
-### SQLite
+## SQLite
 
 Useful for:
 
-* Local development
-* Testing
-* Demonstrations
+- Local development
+- Testing
+- Demonstrations
 
-### PostgreSQL
+## PostgreSQL
 
-Recommended for persistent hosted deployment.
+Used for the deployed application to provide persistent database storage.
 
-The database can be configured using:
+Database configuration is provided through:
 
 ```env
-DATABASE_URL=your_database_connection_string
+DATABASE_URL
 ```
-
-> Render's ephemeral environments should not be treated as permanent storage for SQLite data. For persistent production-style deployment, use PostgreSQL.
 
 ---
 
 # 🧪 Testing
 
-Backend tests can be run from the `api` directory:
+Backend tests can be run from the `backend` directory:
 
 ```bash
 pytest
 ```
 
-For a quick backend verification:
+Quick backend verification:
 
 ```text
 GET /api/health
 ```
 
-Swagger/OpenAPI documentation:
+Local Swagger documentation:
 
 ```text
-/docs
+http://localhost:8000/docs
+```
+
+Deployed Swagger documentation:
+
+```text
+https://pharmavoice-api.onrender.com/docs
 ```
 
 ---
@@ -650,35 +643,39 @@ Swagger/OpenAPI documentation:
 
 A typical workflow can be demonstrated using:
 
-### 1. Seeded complaints
+### 1. Seeded Complaints
 
 Use the sample complaint records available in the project.
 
-### 2. Critical particulate complaint
+### 2. Complaint Intake
 
-Upload the sample PDF containing a particulate-related complaint.
+Paste complaint text or upload a supported document.
 
-### 3. Duplicate complaint
+### 3. AI Extraction
 
-Upload the related EML complaint and verify duplicate detection.
+Review the extracted complaint fields and confidence information.
 
-### 4. Incomplete complaint
+### 4. Completeness Check
 
-Use the sample TXT/email complaint and check the generated follow-up questions.
+Check missing information and generated follow-up questions.
 
-### 5. Complaint Q&A
+### 5. Risk Assessment
 
-Example:
+Review severity, priority, risk score, and suggested actions.
 
-```text
-Which batch is affected?
-```
+### 6. Duplicate Detection
 
-### 6. Human review
+Check whether the complaint matches an existing complaint.
 
-Review the extracted fields, risk information, duplicate indication, and CAPA suggestions.
+### 7. Root Cause & CAPA
 
-### 7. Save
+Review suggested root causes and CAPA recommendations.
+
+### 8. Human Review
+
+Verify and correct AI-generated information.
+
+### 9. Save
 
 Save the verified complaint to the complaint register.
 
@@ -692,7 +689,7 @@ Saved complaints follow:
 CC-YYYY-NNNN
 ```
 
-Example:
+Examples:
 
 ```text
 CC-2026-0001
@@ -702,28 +699,55 @@ CC-2026-0003
 
 ---
 
-# 🔒 Security Notes
+# 📚 API Documentation
 
-* API keys should be stored using environment variables.
-* Do not commit `.env` files.
-* Do not expose `GROQ_API_KEY` in frontend code.
-* Use HTTPS URLs for deployed services.
-* Keep AI-generated recommendations under human review.
-* Use appropriate authentication and access controls before production use.
+The deployed API documentation is available through FastAPI Swagger/OpenAPI:
+
+```text
+https://pharmavoice-api.onrender.com/docs
+```
+
+The documentation allows developers to explore and test the available API routes.
+
+Health check:
+
+```text
+https://pharmavoice-api.onrender.com/api/health
+```
+
+The API includes functionality related to:
+
+- Complaint intake
+- Complaint management
+- Risk assessment
+- Duplicate detection
+- Complaint Q&A
+- AI processing
 
 ---
 
-# 📌 Important Production Note
+# 🔒 Security Notes
+
+- Store API keys using environment variables.
+- Do not commit `.env` files.
+- Do not expose `GROQ_API_KEY` in frontend code.
+- Use HTTPS for deployed services.
+- Keep AI-generated recommendations under human review.
+- Use appropriate authentication and access controls before production use.
+
+---
+
+# 📌 Production Note
 
 PharmaVoice is an AI-assisted QMS application and should be treated as a **decision-support system**.
 
 AI-generated:
 
-* Extracted information
-* Risk assessments
-* Root causes
-* CAPA suggestions
-* Duplicate indications
+- Extracted information
+- Risk assessments
+- Root causes
+- CAPA suggestions
+- Duplicate indications
 
 should be reviewed by authorized personnel before being used in an actual pharmaceutical quality process.
 
@@ -731,46 +755,27 @@ should be reviewed by authorized personnel before being used in an actual pharma
 
 # 🎯 Project Highlights
 
-* AI-assisted pharmaceutical complaint management
-* Multi-format complaint intake
-* Automated field extraction
-* Confidence-aware extraction
-* Complaint completeness checking
-* Follow-up question generation
-* Risk scoring
-* Severity and priority assessment
-* Duplicate complaint detection
-* Root-cause suggestions
-* CAPA recommendations
-* Grounded complaint Q&A
-* Human-in-the-loop review
-* Complaint register
-* LangGraph workflow
-* Groq LLM integration
-* Rule-based fallback
-* React + FastAPI architecture
-* Render deployment support
-
----
-
-# 📚 API Endpoints
-
-Important endpoints include:
-
-| Endpoint       | Purpose                         |
-| -------------- | ------------------------------- |
-| `/api/health`  | Backend health check            |
-| `/docs`        | Swagger API documentation       |
-| Complaint APIs | Complaint intake and management |
-| Risk APIs      | Risk assessment                 |
-| Duplicate APIs | Duplicate detection             |
-| Q&A APIs       | Complaint-related questions     |
-
-The exact available routes can be explored through the Swagger documentation:
-
-```text
-YOUR_RENDER_BACKEND_URL/docs
-```
+- AI-assisted pharmaceutical complaint management
+- Multi-format complaint intake
+- PDF, DOCX, EML, and TXT support
+- Automated field extraction
+- Confidence-aware extraction
+- Complaint completeness checking
+- Follow-up question generation
+- Risk scoring
+- Severity and priority assessment
+- Duplicate complaint detection
+- Root-cause suggestions
+- CAPA recommendations
+- Grounded complaint Q&A
+- Human-in-the-loop review
+- Complaint register
+- LangGraph workflow
+- Groq LLM integration
+- Rule-based fallback
+- React + FastAPI architecture
+- PostgreSQL database
+- Render deployment
 
 ---
 
@@ -830,20 +835,21 @@ CC-YYYY-NNNN
 
 # 💻 Development
 
-### Frontend
+## Frontend
 
 ```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-### Backend
+## Backend
 
 ```bash
-cd api
+cd backend
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 uvicorn index:app --reload --port 8000
 ```
 
@@ -851,21 +857,21 @@ uvicorn index:app --reload --port 8000
 
 # 🌐 Links
 
-### Live Application
+## Live Application
 
-`YOUR_RENDER_FRONTEND_URL`
+https://pharmavoice-sp14.onrender.com
 
-### Backend
+## Backend API
 
-`YOUR_RENDER_BACKEND_URL`
+https://pharmavoice-api.onrender.com
 
-### API Documentation
+## API Documentation
 
-`YOUR_RENDER_BACKEND_URL/docs`
+https://pharmavoice-api.onrender.com/docs
 
-### GitHub Repository
+## GitHub Repository
 
-[PharmaVoice Repository](https://github.com/suniti1809/pharmavoice?utm_source=chatgpt.com)
+https://github.com/suniti1809/PharmaVoice
 
 ---
 
@@ -874,10 +880,12 @@ uvicorn index:app --reload --port 8000
 **Suniti**
 
 GitHub Profile:
-[@suniti1809](https://github.com/suniti1809)
+
+https://github.com/suniti1809
 
 Project Repository:
-[PharmaVoice on GitHub](https://github.com/suniti1809/pharmavoice)
+
+https://github.com/suniti1809/PharmaVoice
 
 ---
 
@@ -893,6 +901,6 @@ This project is intended for educational, demonstration, and project-development
 
 **AI-assisted Customer Complaint Management for Pharmaceutical Quality Systems**
 
-Built with React • FastAPI • LangGraph • Groq • SQLAlchemy • Render
+Built with React • FastAPI • LangGraph • Groq • SQLAlchemy • PostgreSQL • Render
 
 </div>
