@@ -1,21 +1,31 @@
-# Frontend
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node
 node_modules/
 dist/
-.env
 
-# Backend
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# Python virtual environment
 .venv/
 venv/
-*.db
+env/
+
+# Testing / cache
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store
