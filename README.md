@@ -32,10 +32,15 @@ https://pharmavoice-sp14.onrender.com
 **Backend:**  
 https://pharmavoice-api.onrender.com
 
+
+
 ## 📚 API Documentation
 
 **Swagger / OpenAPI:**  
 https://pharmavoice-api.onrender.com/docs
+
+### ❤️ API Health Check
+https://pharmavoice-api.onrender.com/api/health
 
 ---
 
