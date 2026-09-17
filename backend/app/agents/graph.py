@@ -25,8 +25,10 @@ from __future__ import annotations
 
 import logging
 import time
+import warnings
 from datetime import date, datetime
 from typing import Any, TypedDict
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from langgraph.graph import END, StateGraph
 from sqlalchemy.orm import Session
