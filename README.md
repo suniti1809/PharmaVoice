@@ -299,8 +299,7 @@ PharmaVoice/
 │   ├── scripts/
 │   ├── tests/
 │   ├── index.py
-│   ├── requirements.txt
-│   └── requirements-dev.txt
+│   |── requirements.txt
 │
 ├── src/
 │   ├── components/
