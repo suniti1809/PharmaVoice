@@ -29,6 +29,7 @@ import warnings
 from datetime import date, datetime
 from typing import Any, TypedDict
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
 
 from langgraph.graph import END, StateGraph
 from sqlalchemy.orm import Session
