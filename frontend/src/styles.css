@@ -1,7 +1,4 @@
-/* AIVOA QMS - dark theme design tokens and layout.
-   Font: Google Inter (loaded in index.html), as required by the assignment.
-   Colours are defined once here as custom properties, so the whole module can be
-   re-themed (or a light theme added back) without touching component code. */
+
 
 :root {
   color-scheme: dark;
