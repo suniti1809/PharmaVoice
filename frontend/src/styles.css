@@ -93,10 +93,20 @@ p { margin: 0 0 4px; }
 }
 *::-webkit-scrollbar-thumb:hover { background: #3d5480; background-clip: content-box; }
 
-html {
+
   /* In-page jump links land below the sticky section headings. */
-  scroll-padding-top: 20px;
-  scroll-behavior: smooth;
+  html {
+  scroll-padding-top: 0;
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+
+body {
+  overflow-anchor: none;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 /* ---------------- app shell: fixed sidebar + scrolling workspace ---------------- */
